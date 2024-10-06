@@ -11,7 +11,6 @@ import {
   Icon,
   IconProps,
 } from "@chakra-ui/react";
-import Contact from "../Pages/Contact";
 
 const Illustration = (props) => {
   return (
@@ -885,8 +884,6 @@ const Header = () => {
           </Flex>
         </Stack>
       </Container>
-
-      <Contact />
     </>
   );
 };

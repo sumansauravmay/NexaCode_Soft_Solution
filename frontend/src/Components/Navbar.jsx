@@ -51,6 +51,9 @@ const Navbar = () => {
             <Link to="/contactus">
               <Text>Contact us</Text>
             </Link>
+            <Link to="/carreers">
+              <Text>Careers</Text>
+            </Link>
           </Flex>
 
           <Flex alignItems={"center"}>

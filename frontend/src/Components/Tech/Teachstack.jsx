@@ -1,7 +1,7 @@
 import React from "react";
 import Marquee from "react-fast-marquee";
 import { techData } from "./tech";
-import { Avatar, Text } from "@chakra-ui/react";
+import { Avatar, Text, useBreakpointValue, Heading } from "@chakra-ui/react";
 import "./Techstack.css";
 
 const Teachstack = () => {
@@ -13,7 +13,27 @@ const Teachstack = () => {
   return (
     <div className="skills">
       <div className="skillsHeader">
-        <h2 style={{ color: "black" }}>Our Tech Stacks</h2>
+      <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
+          <Text
+            as={'span'}
+            position={'relative'}
+            _after={{
+              content: "''",
+              width: 'full',
+              height: useBreakpointValue({ base: '20%', md: '30%' }),
+              position: 'absolute',
+              bottom: 1,
+              left: 0,
+              bg: 'red.400',
+              zIndex: -1,
+            }}>
+           Our Tech
+          </Text>
+          <Text color={'red.400'} ml={2} as={'span'}>
+          Stacks
+          </Text>{' '}
+        </Heading>
+       
       </div>
       <div className="skillsContainer">
         <div className="skill--scroll">
