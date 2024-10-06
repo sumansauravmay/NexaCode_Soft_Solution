@@ -12,7 +12,7 @@ const Teachstack = () => {
 
   return (
     <div className="skills">
-       <div className="skillsHeader">
+      <div className="skillsHeader">
         <h2 style={{ color: "black" }}>Our Tech Stacks</h2>
       </div>
       <div className="skillsContainer">
