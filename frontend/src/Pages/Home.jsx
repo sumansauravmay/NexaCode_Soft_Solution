@@ -1,9 +1,12 @@
 import React from 'react'
+import Header from '../Components/Header'
+import Teachstack from '../Components/Tech/Teachstack'
 
 const Home = () => {
   return (
     <div>
-      Home
+     <Header/>
+     <Teachstack/>
     </div>
   )
 }
