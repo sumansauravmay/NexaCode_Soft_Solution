@@ -11,6 +11,7 @@ import {
   Icon,
   IconProps,
 } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 const Illustration = (props) => {
   return (
@@ -863,6 +864,7 @@ const Header = () => {
             the user experience and the development process.
           </Text>
           <Stack spacing={6} direction={"row"}>
+            <Link to="/contactus">
             <Button
               rounded={"full"}
               px={6}
@@ -872,6 +874,7 @@ const Header = () => {
             >
               contact us
             </Button>
+            </Link>
             <Button rounded={"full"} px={6}>
               Learn more
             </Button>

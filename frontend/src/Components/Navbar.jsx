@@ -16,11 +16,7 @@ import {
   Center,
   Heading,
 } from "@chakra-ui/react";
-import {
-  HamburgerIcon,
-  MoonIcon,
-  SunIcon,
-} from "@chakra-ui/icons";
+import { HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -30,7 +26,7 @@ const Navbar = () => {
 
   return (
     <>
-      <Box bg={useColorModeValue("gray.100", "gray.900")} px={4}>
+      <Box bg={useColorModeValue("gray.100", "gray.900")} width={"100%"}>
         <Flex h={20} alignItems={"center"} justifyContent={"space-between"}>
           <Flex gap={10}>
             <Heading as="h5" size={"sm"}>
