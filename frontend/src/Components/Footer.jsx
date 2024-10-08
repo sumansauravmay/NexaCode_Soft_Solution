@@ -77,7 +77,7 @@ const Footer = () => {
             <ListHeader>Stay up to date</ListHeader>
             <Stack align={"flex-end"}>
               <Stack direction={"row"}>
-                <Text fontSize={"2xl"} fontWeight={600}>
+                <Text fontSize={"xl"} fontWeight={550}>
                   sonu@nexacodesoftsolution.com
                 </Text>
                 <IconButton
@@ -92,7 +92,7 @@ const Footer = () => {
               </Stack>
 
               <Stack direction={"row"}>
-                <Text fontSize={"2xl"} fontWeight={600}>
+                <Text fontSize={"xl"} fontWeight={550}>
                   (+91) 7908627407
                 </Text>
                 <IconButton
