@@ -1,10 +1,18 @@
 import React from 'react';
 import { Box, Heading, Text, Button } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
+import { Helmet } from "react-helmet";
 
 
 const Carreer = () => {
   return (
+    <>
+     <Helmet>
+        <title>Carreers</title>
+        <meta name="carreer" content="Carreer component" />
+      </Helmet>
+
+   
     <Box textAlign="center" py={10} px={6}>
     <Heading
       display="inline-block"
@@ -28,6 +36,7 @@ const Carreer = () => {
     </Button>
     </Link>
   </Box>
+  </>
   )
 }
 
