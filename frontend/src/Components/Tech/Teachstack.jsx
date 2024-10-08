@@ -27,10 +27,10 @@ const Teachstack = () => {
               bg: 'red.400',
               zIndex: -1,
             }}>
-           Our Tech
+           Our
           </Text>
           <Text color={'red.400'} ml={2} as={'span'}>
-          Stacks
+          Technology
           </Text>{' '}
         </Heading>
        
