@@ -837,7 +837,7 @@ const Illustration = (props) => {
 const Header = () => {
   return (
     <>
-      <Container maxW={"5xl"}>
+      <Container maxW={{ base: "xl", sm: "2xl", md: "6xl" }}>
         <Stack
           textAlign={"center"}
           align={"center"}
@@ -847,7 +847,7 @@ const Header = () => {
           
             <Heading
               fontWeight={600}
-              fontSize={{ base: "3xl", sm: "4xl", md: "6xl" }}
+              fontSize={{ base: "xl", sm: "4xl", md: "6xl" }}
               lineHeight={"140%"}
             >
                 <Marquee>
