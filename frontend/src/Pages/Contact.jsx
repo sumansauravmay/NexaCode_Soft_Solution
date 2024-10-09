@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Button,
@@ -22,6 +22,7 @@ import { BsLinkedin, BsPerson } from "react-icons/bs";
 import { MdEmail, MdOutlineEmail } from "react-icons/md";
 import { FaMobileAlt } from "react-icons/fa";
 import { Helmet } from "react-helmet";
+import emailjs from "emailjs-com";
 
 const Contact = () => {
   const email = "sonu@nexacodesoftsolution.com";
@@ -31,6 +32,39 @@ const Contact = () => {
     useClipboard(email);
   const { hasCopied: hasCopiedPhone, onCopy: onCopyPhone } =
     useClipboard(phoneNumber);
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .send(
+        "service_q1hiadu", // Replace with your EmailJS service ID
+        "template_7dxvndb", // Replace with your EmailJS template ID
+        formData,
+        "MWPyDeMWmx4K4tre3" // Replace with your EmailJS user ID
+      )
+      .then(
+        (result) => {
+          console.log("Email successfully sent!", result.text);
+          alert("Email sent successfully!");
+        },
+        (error) => {
+          console.log("Failed to send email.", error.text);
+          alert("Failed to send email.");
+        }
+      );
+  };
 
   return (
     <>
@@ -148,6 +182,8 @@ const Contact = () => {
                           type="text"
                           name="name"
                           placeholder="Your Name"
+                          value={formData.name}
+                          onChange={handleChange}
                         />
                       </InputGroup>
                     </FormControl>
@@ -163,6 +199,8 @@ const Contact = () => {
                           type="email"
                           name="email"
                           placeholder="Your Email"
+                          value={formData.email}
+                          onChange={handleChange}
                         />
                       </InputGroup>
                     </FormControl>
@@ -173,12 +211,15 @@ const Contact = () => {
                       <Textarea
                         name="message"
                         placeholder="Your Message"
+                        value={formData.message}
+                        onChange={handleChange}
                         rows={6}
                         resize="none"
                       />
                     </FormControl>
 
                     <Button
+                      onClick={sendEmail}
                       colorScheme="blue"
                       bg="blue.400"
                       color="white"
