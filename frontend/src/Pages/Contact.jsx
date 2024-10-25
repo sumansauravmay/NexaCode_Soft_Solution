@@ -10,13 +10,13 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
-  Text,
   Stack,
   Textarea,
   Tooltip,
   useClipboard,
   useColorModeValue,
   VStack,
+  useToast,
 } from "@chakra-ui/react";
 import { BsLinkedin, BsPerson } from "react-icons/bs";
 import { MdEmail, MdOutlineEmail } from "react-icons/md";
@@ -25,6 +25,7 @@ import { Helmet } from "react-helmet";
 import emailjs from "emailjs-com";
 
 const Contact = () => {
+  const toast=useToast();
   const email = "sonu@nexacodesoftsolution.com";
   const phoneNumber = "7908627407";
 
@@ -57,11 +58,30 @@ const Contact = () => {
       .then(
         (result) => {
           console.log("Email successfully sent!", result.text);
-          alert("Email sent successfully!");
+          toast({
+            title: "Email sent successfully!",
+            description: "You get an response in 2 days!",
+            position: "top",
+            status: "success",
+            duration: 5000,
+            isClosable: true,
+          });
+          setFormData({
+            name: "",
+            email: "",
+            message: "",
+          })
         },
         (error) => {
           console.log("Failed to send email.", error.text);
-          alert("Failed to send email.");
+          toast({
+            title: "Failed to send email!",
+            description: "Something went wrong!",
+            position: "top",
+            status: "warning",
+            duration: 5000,
+            isClosable: true,
+          });
         }
       );
   };

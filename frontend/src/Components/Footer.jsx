@@ -40,7 +40,7 @@ const Footer = () => {
                 <Flex>
                   <Avatar
                     size={"sm"}
-                    src={"https://i.postimg.cc/FKZRPB2F/logo.jpg"}
+                    src={"https://i.postimg.cc/qM9ZHmbq/linked-In-company-pic.jpg"}
                   />
                   <Heading size={10}>Nexacode Soft solution</Heading>
                 </Flex>
@@ -52,8 +52,8 @@ const Footer = () => {
             <Box as="a" href={"/aboutus"}>
               About us
             </Box>
-            <Box as="a" href={"/"}>
-              Blog
+            <Box as="a" href={"https://www.linkedin.com/company/nexacode-soft-solution/?viewAsMember=true"}>
+              Follow on LinkedIn
             </Box>
             <Box as="a" href={"/contactus"}>
               Contact us
@@ -91,7 +91,7 @@ const Footer = () => {
                 />
               </Stack>
 
-              <Stack direction={"row"}>
+              {/* <Stack direction={"row"}>
                 <Text fontSize={"xl"} fontWeight={550}>
                   (+91) 7908627407
                 </Text>
@@ -104,7 +104,7 @@ const Footer = () => {
                   aria-label="Subscribe"
                   icon={<FaMobileAlt />}
                 />
-              </Stack>
+              </Stack> */}
             </Stack>
           </Stack>
         </SimpleGrid>

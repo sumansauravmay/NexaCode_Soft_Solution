@@ -23,7 +23,7 @@ const Navbar = () => {
 
   return (
     <>
-      <Box position="fixed" top={0} left={0} right={0} zIndex={10}>
+      <Box position="sticky" top={0} left={0} right={0} zIndex={10}>
         <Flex
           bg={useColorModeValue("white", "gray.800")}
           color={useColorModeValue("gray.600", "white")}
@@ -51,7 +51,7 @@ const Navbar = () => {
           </Flex>
           <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
             <NavLink smooth to="/#">
-            <Avatar src="https://i.postimg.cc/FKZRPB2F/logo.jpg" alt="image" />
+            <Avatar src="https://i.postimg.cc/qM9ZHmbq/linked-In-company-pic.jpg" alt="logo" />
             </NavLink>
             <Flex display={{ base: "none", md: "flex" }} ml={10}>
               <Stack direction={"row"} spacing={4}>
