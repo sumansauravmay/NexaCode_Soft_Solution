@@ -25,7 +25,7 @@ import { Helmet } from "react-helmet";
 import emailjs from "emailjs-com";
 
 const Contact = () => {
-  const toast=useToast();
+  const toast = useToast();
   const email = "sonu@nexacodesoftsolution.com";
   const phoneNumber = "7908627407";
 
@@ -47,43 +47,53 @@ const Contact = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
-
-    emailjs
-      .send(
-        "service_q1hiadu", // Replace with your EmailJS service ID
-        "template_7dxvndb", // Replace with your EmailJS template ID
-        formData,
-        "MWPyDeMWmx4K4tre3" // Replace with your EmailJS user ID
-      )
-      .then(
-        (result) => {
-          console.log("Email successfully sent!", result.text);
-          toast({
-            title: "Email sent successfully!",
-            description: "You get an response in 2 days!",
-            position: "top",
-            status: "success",
-            duration: 5000,
-            isClosable: true,
-          });
-          setFormData({
-            name: "",
-            email: "",
-            message: "",
-          })
-        },
-        (error) => {
-          console.log("Failed to send email.", error.text);
-          toast({
-            title: "Failed to send email!",
-            description: "Something went wrong!",
-            position: "top",
-            status: "warning",
-            duration: 5000,
-            isClosable: true,
-          });
-        }
-      );
+    if (!formData.name || !formData.email || !formData.message) {
+      toast({
+        title: "Failed to send email!",
+        description: "Please fill all the input!",
+        position: "top",
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+      });
+    } else {
+      emailjs
+        .send(
+          "service_q1hiadu", // Replace with your EmailJS service ID
+          "template_7dxvndb", // Replace with your EmailJS template ID
+          formData,
+          "MWPyDeMWmx4K4tre3" // Replace with your EmailJS user ID
+        )
+        .then(
+          (result) => {
+            console.log("Email successfully sent!", result.text);
+            toast({
+              title: "Email sent successfully!",
+              description: "You get an response in 2 days!",
+              position: "top",
+              status: "success",
+              duration: 5000,
+              isClosable: true,
+            });
+            setFormData({
+              name: "",
+              email: "",
+              message: "",
+            });
+          },
+          (error) => {
+            console.log("Failed to send email.", error.text);
+            toast({
+              title: "Failed to send email!",
+              description: "Something went wrong!",
+              position: "top",
+              status: "warning",
+              duration: 5000,
+              isClosable: true,
+            });
+          }
+        );
+    }
   };
 
   return (
