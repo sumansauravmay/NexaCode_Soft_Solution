@@ -97,7 +97,13 @@ sudo rm -rf default
       }
   }
   ```
-  
+//After pasting the above code, do write and quite(
+1. Press Esc (ensure you're in normal mode).
+2. Type :wq (write and quit). If this is not working command the below line
+3. Type :wq! (write and quit forcefully).
+4. Press Enter.)  
+
+
 - Activate the configuration using the following command:
 
   ```bash
