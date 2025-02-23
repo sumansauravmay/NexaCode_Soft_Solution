@@ -112,6 +112,7 @@ sudo rm -rf default
 ### Step 8: Start the Application
 - Restart Nginx and allow the changes to take place.
   ```bash
+  sudo gpasswd -a www-data ubuntu
   sudo systemctl restart nginx
   sudo service nginx restart
   ```
