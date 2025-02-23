@@ -72,7 +72,9 @@ with this command, you can check if already a default nginx file exists. You hav
 
 
 ```bash
+// check default folder exists of not. go to the root folder and run the command
 cd /etc/nginx/sites-enabled/
+// delete the default folder/file
 sudo rm -rf default
 ```
 
