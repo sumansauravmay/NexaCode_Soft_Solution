@@ -61,8 +61,11 @@ it will ask you for your GitHub username and password. You can use a Personal Ac
 ### Step 6: Create Production Build
   ```bash
   npm run build
+// create a directory in the root folder
   sudo mkdir -p /var/www/vhosts/frontend/
+// now get the build folder to your directory. Go to your folder where build is and run the below command.
   sudo cp -R build/ /var/www/vhosts/frontend/
+//Now build folder is moved to our directory. to check, go to root folder and check to your directory(/var/www/vhosts/frontend/). Command is ls(to check all folder) and cd folder_name(to go the relevent folder) 
   ```
 ### Step 7: Create Nginx File
 with this command, you can check if already a default nginx file exists. You have to remove it.
