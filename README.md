@@ -61,7 +61,7 @@ it will ask you for your GitHub username and password. You can use a Personal Ac
 ### Step 6: Create Production Build
   ```bash
   npm run build
-  sudo mkdir /var/www/vhosts/frontend/
+  sudo mkdir -p /var/www/vhosts/frontend/
   sudo cp -R build/ /var/www/vhosts/frontend/
   ```
 ### Step 7: Create Nginx File
